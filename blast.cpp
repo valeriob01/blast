@@ -37,7 +37,7 @@
 
 /* Declare and initialize variables */
 
-double D, Y, H, TEF, TAU, Q, Z, P, EMP, REMS;
+float D=0, Y=0, H=0, TEF=0, TAU=0, Q=0, Z=0, P=0, EMP=0, REMS=0;
 
 int main(int argc, char *argv[]) {
 
@@ -57,14 +57,14 @@ int main(int argc, char *argv[]) {
 // CALC BLAST EFFECTS
 
   // Thermal flux Q
-  Q=3000.0*TEF*TAU*Y/(D*D);
+  Q=3000.0 * TEF * TAU * Y / (D * D);
   // Blast overpressure P
-  Z=(std::pow(Y,.333))/D;
+  Z=(std::pow(Y,0.333))/D;
   P=22.4*(std::pow(Z,3.0)) + 15.8 * (std::pow(Z,1.5));
   // EMP range
-  EMP=sqrt(2.0*H*3963.0/5280.0);
+  EMP=sqrt(2.0 * H * 3963.0 / 5280.0);
   // Radiation dosage REM
-  REMS=250.0*1000.0*Y/(16.0*3.1416*D*D);
+  REMS=250.0 * 1000.0 * Y / (16.0 * 3.1416 * D * D);
 
 // Results
 
@@ -76,16 +76,16 @@ printf("\nRADIATION DOSAGE (rems) %f", REMS);
 
 // Overpressure Effects
 
-if (P>20) { printf("\nOverpressure has caused winds in excess of 500 miles per hour. Even multi-story reinforced concrete buildings are leveled.");}
-else if (P>10) { printf("\nOverpressure has caused winds in excess of 300 miles per hour. Most factories and commercial buildings are leveled, as are small wood and brick residences.");}
-else if (P>5) { printf("\nOverpressure has caused winds in excess of 160 miles per hour. Unreinforced brick and wood houses are leveled.");}
-else if (P>2) { printf("\nOverpressure has not had a significant effect on wind conditions or the structure of buildings.");};
+if (P>20) { printf("\nOverpressure has caused winds in excess of 500 miles per hour. Even multi-story reinforced concrete buildings are leveled.\n");}
+else if (P>10) { printf("\nOverpressure has caused winds in excess of 300 miles per hour. Most factories and commercial buildings are leveled, as are small wood and brick residences.\n");}
+else if (P>5) { printf("\nOverpressure has caused winds in excess of 160 miles per hour. Unreinforced brick and wood houses are leveled.\n");}
+else if (P>2) { printf("\nOverpressure has not had a significant effect on wind conditions or the structure of buildings.\n");};
 
 
 // Thermal Effect
-if (Q>10) { printf("\nThermal flux has burned you to a crisp."); }
-else if (Q>5) { printf("\nYou have suffered third degree burns because of Thermal Flux.");}
-else if (Q>1) { printf("\nYou have suffered second degree burns because of Thermal Flux.");}
-else if (Q<1) { printf("\nThermal flux has added to your tan.");};
+if (Q>10) { printf("\nThermal flux has burned you to a crisp.\n"); }
+else if (Q>5) { printf("\nYou have suffered third degree burns because of Thermal Flux.\n");}
+else if (Q>1) { printf("\nYou have suffered second degree burns because of Thermal Flux.\n");}
+else if (Q<1) { printf("\nThermal flux has added to your tan.\n");};
 
 };
