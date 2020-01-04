@@ -36,7 +36,6 @@
 #include <cmath>
 
 /* Declare and initialize variables */
-
 float D=0, Y=0, H=0, TEF=0, TAU=0, Q=0, Z=0, P=0, EMP=0, REMS=0;
 
 int main(int argc, char *argv[]) {
@@ -67,25 +66,10 @@ int main(int argc, char *argv[]) {
   REMS=250.0 * 1000.0 * Y / (16.0 * 3.1416 * D * D);
 
 // Results
-
 printf("\n\nThe NUCLEAR BLAST had the following effects:\n");
 printf("\nTHERMAL FLUX (cal/sq cm) %f", Q);
 printf("\nOVERPRESSURE (lb/sq in) %f", P);
 printf("\nEMP RANGE (miles) %f", EMP);
 printf("\nRADIATION DOSAGE (rems) %f", REMS);
-
-// Overpressure Effects
-
-if (P>20) { printf("\nOverpressure has caused winds in excess of 500 miles per hour. Even multi-story reinforced concrete buildings are leveled.\n");}
-else if (P>10) { printf("\nOverpressure has caused winds in excess of 300 miles per hour. Most factories and commercial buildings are leveled, as are small wood and brick residences.\n");}
-else if (P>5) { printf("\nOverpressure has caused winds in excess of 160 miles per hour. Unreinforced brick and wood houses are leveled.\n");}
-else if (P>2) { printf("\nOverpressure has not had a significant effect on wind conditions or the structure of buildings.\n");};
-
-
-// Thermal Effect
-if (Q>10) { printf("\nThermal flux has burned you to a crisp.\n"); }
-else if (Q>5) { printf("\nYou have suffered third degree burns because of Thermal Flux.\n");}
-else if (Q>1) { printf("\nYou have suffered second degree burns because of Thermal Flux.\n");}
-else if (Q<1) { printf("\nThermal flux has added to your tan.\n");};
 
 };
