@@ -71,5 +71,6 @@ printf("\nTHERMAL FLUX (cal/sq cm) %f", Q);
 printf("\nOVERPRESSURE (lb/sq in) %f", P);
 printf("\nEMP RANGE (miles) %f", EMP);
 printf("\nRADIATION DOSAGE (rems) %f", REMS);
+printf("\n");
 
 };
